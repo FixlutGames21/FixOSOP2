@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FixOS Reimagine</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="wallpaper-glow"></div>
+  <main class="desktop" id="desktop">
+    <section class="desktop-icons" id="desktopIcons">
+      <button class="desktop-icon" data-app="explorer">
+        <span class="desktop-icon__glyph">📁</span>
+        <span class="desktop-icon__label">Проводник</span>
+      </button>
+      <button class="desktop-icon" data-app="browser">
+        <span class="desktop-icon__glyph">🌐</span>
+        <span class="desktop-icon__label">Браузер</span>
+      </button>
+      <button class="desktop-icon" data-app="settings">
+        <span class="desktop-icon__glyph">⚙</span>
+        <span class="desktop-icon__label">Параметры</span>
+      </button>
+      <button class="desktop-icon" data-app="about">
+        <span class="desktop-icon__glyph">🪟</span>
+        <span class="desktop-icon__label">О системе</span>
+      </button>
+    </section>
+
+    <section class="window-layer" id="windowLayer"></section>
+
+    <aside class="start-menu hidden" id="startMenu">
+      <div class="start-menu__header">
+        <div>
+          <div class="start-menu__title">FixOS</div>
+          <div class="start-menu__subtitle">OpenComputers 2 Reimagine</div>
+        </div>
+      </div>
+      <div class="start-menu__grid">
+        <button class="tile tile--large" data-app="explorer">Проводник</button>
+        <button class="tile tile--wide" data-app="browser">Браузер</button>
+        <button class="tile" data-app="settings">Параметры</button>
+        <button class="tile" data-app="about">Система</button>
+      </div>
+    </aside>
+
+    <nav class="context-menu hidden" id="contextMenu"></nav>
+  </main>
+
+  <footer class="taskbar">
+    <button class="start-button" id="startButton">⊞</button>
+    <div class="taskbar-apps" id="taskbarApps"></div>
+    <div class="taskbar-status">
+      <div id="taskbarClock">00:00</div>
+      <div id="taskbarDate">00.00.0000</div>
+    </div>
+  </footer>
+
+  <template id="windowTemplate">
+    <article class="window">
+      <header class="window__titlebar">
+        <div class="window__title"></div>
+        <div class="window__actions">
+          <button class="window__action" data-action="minimize">—</button>
+          <button class="window__action" data-action="maximize">□</button>
+          <button class="window__action window__action--close" data-action="close">✕</button>
+        </div>
+      </header>
+      <div class="window__content"></div>
+    </article>
+  </template>
+
+  <script src="./app.js"></script>
+</body>
+</html>
